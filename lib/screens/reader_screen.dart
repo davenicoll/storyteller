@@ -113,19 +113,14 @@ class _ReaderScreenState extends State<ReaderScreen> {
         }
       }
 
-      // Pre-render all pages as images
+      // Pre-render all pages as images sequentially
+      // Note: Parallel rendering causes race conditions with pdfx library
       final List<Uint8List?> images = List.filled(pageCount, null);
 
-      // Render pages in parallel batches for speed
-      const batchSize = 3;
-      for (int i = 0; i < pageCount; i += batchSize) {
-        final futures = <Future<void>>[];
-        for (int j = i; j < i + batchSize && j < pageCount; j++) {
-          futures.add(_renderPage(document, j, images));
-        }
-        await Future.wait(futures);
+      for (int i = 0; i < pageCount; i++) {
+        await _renderPage(document, i, images);
 
-        // Update state after each batch so user sees progress
+        // Update state after each page so user sees progress
         if (mounted) {
           setState(() {
             _pageImages = List.from(images);
