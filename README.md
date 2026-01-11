@@ -25,8 +25,8 @@ Longer stories were serialized across multiple issues. Pinocchio was the longest
 
 I'm not affiliated with either of these links (I found them via Google).
 
-- [Magnet](magnet:?xt=urn:btih:GUMWAOCBTFVY65SIHGPATG7KZEOZ7PAB&dn=Story%20Teller)
-- [Mega download](https://mega.nz/#F!r4pBADaK!hJUyak2JvM_D5TB3ohtKUQ)
+- <a href="https://tinyurl.com/3er9ak39">Magnet</a> download
+- [Mega](https://mega.nz/#F!r4pBADaK!hJUyak2JvM_D5TB3ohtKUQ) download
 
 1. Download the MP3s and PDFs to your tablet device. 
 1. Update [story_manifest.yaml](story_manifest.yaml) to match the file locations. 
