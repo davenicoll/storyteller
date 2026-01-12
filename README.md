@@ -9,7 +9,7 @@ A tablet-friendly Android and iOS app for reading PDFs while listening to audio,
 
 ## Story wut?
 
-Story Teller was a British children's partwork magazine published fortnightly starting in December 1982. Each issue came with a cover-mounted cassette tape containing professionally narrated readings of the stories, complete with music and sound effects.
+Story Teller was a British children's magazine published fortnightly starting in December 1982. Each issue came with a cover-mounted cassette tape containing professionally narrated readings of the stories, complete with music and sound effects.
 
 The collection included a mix of:
 - Traditional folk tales (like "Anansi the Spiderman")
