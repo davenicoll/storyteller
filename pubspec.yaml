@@ -65,6 +65,9 @@ dependencies:
   # Permission handling for Android storage access
   permission_handler: ^11.3.1
 
+  # Keep screen awake
+  wakelock_plus: ^1.2.8
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

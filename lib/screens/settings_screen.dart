@@ -32,6 +32,8 @@ class SettingsScreen extends StatelessWidget {
                 children: [
                   _buildThemeSection(context, settings),
                   const SizedBox(height: 24),
+                  _buildScreenAwakeSection(context, settings),
+                  const SizedBox(height: 24),
                   _buildManifestFolderSection(context, settings),
                   const SizedBox(height: 24),
                   if (settings.manifestFolderPath != null)
@@ -115,6 +117,44 @@ class SettingsScreen extends StatelessWidget {
               onSelectionChanged: (Set<ThemeModeSetting> selection) {
                 settings.setThemeMode(selection.first);
               },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildScreenAwakeSection(
+      BuildContext context, SettingsProvider settings) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.visibility,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Keep Screen Awake',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ),
+                Switch(
+                  value: settings.keepScreenAwake,
+                  onChanged: (value) => settings.setKeepScreenAwake(value),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Prevent the screen from dimming while reading stories.',
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

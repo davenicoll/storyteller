@@ -31,6 +31,7 @@ class SettingsProvider extends ChangeNotifier {
   static const String _manifestFolderKey = 'manifest_folder_path';
   static const String _thumbnailSizeKey = 'thumbnail_size';
   static const String _themeModeKey = 'theme_mode';
+  static const String _keepScreenAwakeKey = 'keep_screen_awake';
 
   String? _manifestFolderPath;
   List<ManifestInfo> _manifests = [];
@@ -39,6 +40,7 @@ class SettingsProvider extends ChangeNotifier {
   String? _scanError;
   int _thumbnailSizeIndex = 1; // 0 = small, 1 = medium, 2 = large
   ThemeModeSetting _themeMode = ThemeModeSetting.light;
+  bool _keepScreenAwake = true; // Default to enabled
 
   String? get manifestFolderPath => _manifestFolderPath;
   List<ManifestInfo> get manifests => _manifests;
@@ -47,6 +49,7 @@ class SettingsProvider extends ChangeNotifier {
   String? get scanError => _scanError;
   int get thumbnailSizeIndex => _thumbnailSizeIndex;
   ThemeModeSetting get themeMode => _themeMode;
+  bool get keepScreenAwake => _keepScreenAwake;
 
   ThemeMode get flutterThemeMode {
     switch (_themeMode) {
@@ -75,6 +78,7 @@ class SettingsProvider extends ChangeNotifier {
     _themeMode = themeModeIndex >= 0 && themeModeIndex < ThemeModeSetting.values.length
         ? ThemeModeSetting.values[themeModeIndex]
         : ThemeModeSetting.light;
+    _keepScreenAwake = prefs.getBool(_keepScreenAwakeKey) ?? true; // default to enabled
     if (_manifestFolderPath != null) {
       await scanForManifests();
     }
@@ -93,6 +97,13 @@ class SettingsProvider extends ChangeNotifier {
     _thumbnailSizeIndex = index;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_thumbnailSizeKey, index);
+    notifyListeners();
+  }
+
+  Future<void> setKeepScreenAwake(bool value) async {
+    _keepScreenAwake = value;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_keepScreenAwakeKey, value);
     notifyListeners();
   }
 

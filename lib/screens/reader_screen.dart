@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:pdfx/pdfx.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
+import 'package:provider/provider.dart';
+import '../providers/settings_provider.dart';
 
 class ReaderScreen extends StatefulWidget {
   final String? pdfPath;
@@ -52,6 +55,8 @@ class _ReaderScreenState extends State<ReaderScreen> {
   // Key to force rebuild of gesture widgets on orientation change
   int _gestureRebuildKey = 0;
 
+  bool _wakelockApplied = false;
+
   @override
   void initState() {
     super.initState();
@@ -67,9 +72,19 @@ class _ReaderScreenState extends State<ReaderScreen> {
     _startHideTimer();
   }
 
+  void _applyWakelock() {
+    if (_wakelockApplied) return;
+    _wakelockApplied = true;
+    final settings = context.read<SettingsProvider>();
+    if (settings.keepScreenAwake) {
+      WakelockPlus.enable();
+    }
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _applyWakelock();
     final orientation = MediaQuery.of(context).orientation;
     if (_lastOrientation != null && _lastOrientation != orientation) {
       // Orientation changed - reset all zoom states and force gesture widget rebuild
@@ -289,6 +304,7 @@ class _ReaderScreenState extends State<ReaderScreen> {
       controller.dispose();
     }
     _transformControllers.clear();
+    WakelockPlus.disable();
     super.dispose();
   }
 
