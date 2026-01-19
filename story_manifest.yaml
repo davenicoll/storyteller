@@ -264,10 +264,6 @@ collections:
     pdf: "Story Teller 1/Christmas Story Teller 1/Christmas Story Teller 1.pdf"
     audio:
     - "Story Teller 1/Christmas Story Teller 1/1 Ding Dong Merrily on High.mp3"
-    - "Story Teller 1/Christmas Story Teller 1/10 Aladdin and his Magic Lamp.mp3"
-    - "Story Teller 1/Christmas Story Teller 1/11 The Great Sleigh Robbery.mp3"
-    - "Story Teller 1/Christmas Story Teller 1/12 The First Christmas.mp3"
-    - "Story Teller 1/Christmas Story Teller 1/13 We Three Kings.mp3"
     - "Story Teller 1/Christmas Story Teller 1/2 Bertie's Escapade.mp3"
     - "Story Teller 1/Christmas Story Teller 1/3 The Chocolate Soldier.mp3"
     - "Story Teller 1/Christmas Story Teller 1/4 Timbertwig's Christmas Tree.mp3"
@@ -276,6 +272,13 @@ collections:
     - "Story Teller 1/Christmas Story Teller 1/7 Silent Night.mp3"
     - "Story Teller 1/Christmas Story Teller 1/8 Boo Ho Ho!.mp3"
     - "Story Teller 1/Christmas Story Teller 1/9 What Wanda Wanted.mp3"
+    - "Story Teller 1/Christmas Story Teller 1/10 Aladdin and his Magic Lamp.mp3"
+    - "Story Teller 1/Christmas Story Teller 1/11 The Great Sleigh Robbery.mp3"
+    - "Story Teller 1/Christmas Story Teller 1/12 The First Christmas.mp3"
+    - "Story Teller 1/Christmas Story Teller 1/13 We Three Kings.mp3"
+  - name: Bonus Material 1
+    pdf: "Story Teller 1/Bonus Material 1/Story Teller 2 Leaflet.pdf"
+    audio: []
 - name: Story Teller 2
   parts:
   - name: Story Teller 2 Part 1
@@ -566,9 +569,6 @@ collections:
     pdf: "Story Teller 2/Christmas Story Teller 2/Christmas Story Teller 2.pdf"
     audio:
     - "Story Teller 2/Christmas Story Teller 2/1 Deck the Halls.mp3"
-    - "Story Teller 2/Christmas Story Teller 2/10 Grogre and the Giant Nasher.mp3"
-    - "Story Teller 2/Christmas Story Teller 2/11 A Christmas Carol.mp3"
-    - "Story Teller 2/Christmas Story Teller 2/12 We Wish You A Merry Christmas.mp3"
     - "Story Teller 2/Christmas Story Teller 2/2 Gobbolino's Christmas Adventure.mp3"
     - "Story Teller 2/Christmas Story Teller 2/3 Shorty and the Starship.mp3"
     - "Story Teller 2/Christmas Story Teller 2/4 Mole's Winter Welcome.mp3"
@@ -577,3 +577,6 @@ collections:
     - "Story Teller 2/Christmas Story Teller 2/7 Dick Whittington and his Cat.mp3"
     - "Story Teller 2/Christmas Story Teller 2/8 The Tale of the Little Pine Tree.mp3"
     - "Story Teller 2/Christmas Story Teller 2/9 The Fairies' Cake.mp3"
+    - "Story Teller 2/Christmas Story Teller 2/10 Grogre and the Giant Nasher.mp3"
+    - "Story Teller 2/Christmas Story Teller 2/11 A Christmas Carol.mp3"
+    - "Story Teller 2/Christmas Story Teller 2/12 We Wish You A Merry Christmas.mp3"
