@@ -1,4 +1,4 @@
-# Storyteller App
+# Storyteller
 
 A tablet-friendly Android and iOS app for reading PDFs while listening to audio, built with Flutter. Inspired by the Story Teller children's magazine series from the 1980s. This app does not contain copyrighted content.
 
